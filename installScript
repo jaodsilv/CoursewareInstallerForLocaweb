@@ -36,6 +36,7 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3
 
 source /usr/local/rvm/scripts/rvm
+bash /etc/profile.d/rvm.sh
 
 source ~/.bash_profile
 
@@ -239,8 +240,16 @@ git clone https://github.com/saasbook/courseware.git
 #
 #
 
+source /usr/local/rvm/scripts/rvm
+echo "source /usr/local/rvm/scripts/rvm" >> .profile
+
+echo "#####################################"
+echo "please run the following commands:"
 echo "cd couseware/vm-setup/rottenpotatoes"
 echo "bundle install"
 echo "rake db:setup"
-echo "Add port 3000 to firewall"
 echo "rails server --binding=IP"
+
+echo "###################################"
+echo "You may need to rerun the following command sometimes:"
+echo "source /usr/local/rvm/scripts/rvm"
